@@ -1,0 +1,229 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* * Root */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-color: #2c3e50;
+  --light-bg: #f8f9fa;
+  --white-color: #ffffff;
+  --gray-color: #ccc;
+  --star-color: #fdc106;
+}
+
+/* Global */
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+
+#section-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+#section-card .icon {
+  background-color: var(--light-bg);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+#section-card .icon i {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+#section-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* * Header */
+header .navbar {
+  background-color: var(--primary-color);
+  color: var(--white-color) !important;
+  padding: 1rem 4rem;
+}
+
+header .navbar a {
+  color: var(--white-color) !important;
+}
+
+header .navbar .navbar-brand {
+  font-size: 1.5rem !important;
+  font-weight: 700;
+}
+header .navbar .navbar-brand i {
+  color: var(--secondary-color);
+  margin: 0 0.25rem;
+}
+
+header .navbar .nav-link {
+  color: var(--gray-color) !important;
+  padding: 0.5rem 1rem !important;
+}
+
+header .navbar .nav-link:hover {
+  color: var(--secondary-color) !important;
+}
+header .navbar .nav-link.active {
+  color: var(--white-color) !important;
+}
+header .navbar button {
+  padding: 1rem;
+}
+header .navbar .fa-bars {
+  color: var(--gray-color) !important;
+  font-size: 1.8rem;
+}
+
+/* * Home */
+
+#home .carousel-item {
+  position: relative;
+}
+#home .carousel-item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.399), rgba(0, 0, 0, 0.399));
+  width: 100%;
+  height: 100%;
+}
+#home .carousel-item img {
+  height: 80vh;
+  object-fit: cover;
+}
+
+#home .carousel-item .carousel-caption {
+  margin-bottom: 80px;
+}
+#home .carousel-item .carousel-caption h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+#home .carousel-item .carousel-caption p {
+  font-size: 1.2rem;
+}
+
+/* Html kısmındaki birden fazla elemana ortak still vermek istediğimizde bunu ilgili elemanların adlarını , ile ayrıp tek {} içerisinde yazabiliriz.Ama bu durumda dahi eğer erişmemiz gereken elemanın kapsam sayısı fazla ise yine kod tekrarına düşeriz.Bunu enegellemek içinse :where(){} seçicisi kullanılır.Bu seçici bir kapsam içerisindeki birden fazla elemana tek bir noktada erişmek için kullanılır. */
+#home :where(.carousel-control-prev-icon, .carousel-control-next-icon) {
+  width: 60px;
+  height: 60px;
+  font-weight: bold;
+}
+
+/* * Popular Cryptos */
+#cards-wrapper {
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* * Features */
+#features {
+  background-color: var(--light-bg);
+}
+
+/* * Testimonials */
+
+#testimonial-card {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  height: 225px;
+}
+#testimonial-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+#testimonial-card #user-icon {
+  font-size: 30px;
+  color: var(--secondary-color);
+}
+
+.fa-star {
+  color: var(--star-color);
+}
+
+/* * News */
+
+#news {
+  background-color: var(--light-bg);
+}
+
+#news #news-card {
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#news #news-card:hover figure img {
+  transform: scale(1.1);
+}
+
+#news #news-card figure {
+  position: relative;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+#news #news-card figure img {
+  transition: all 0.5s ease-in-out;
+}
+#news #news-card figure .news-category {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+/* * Contact */
+#contact-wrapper {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 860px;
+  margin: 2rem auto;
+  border-radius: 1rem;
+}
+#contact-wrapper h1 {
+  white-space: nowrap;
+  font-size: 30px;
+  font-weight: bold;
+}
+#contact-wrapper #info-item-icon {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+#contact-wrapper form textarea {
+  resize: none;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+footer #logo {
+  color: var(--secondary-color);
+}
